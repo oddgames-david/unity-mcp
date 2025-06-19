@@ -21,7 +21,7 @@ namespace UnityMcpBridge.Editor.Tools
 
         public static object HandleCommand(JObject @params)
         {
-            string action = @params["action"]?.ToString().ToLower();
+            string action = @params["action"] != null ? @params["action"].ToString().ToLower() : null;
             if (string.IsNullOrEmpty(action))
             {
                 return Response.Error("Action parameter is required.");
@@ -29,17 +29,17 @@ namespace UnityMcpBridge.Editor.Tools
 
             // Parameters used by various actions
             JToken targetToken = @params["target"]; // Can be string (name/path) or int (instanceID)
-            string searchMethod = @params["searchMethod"]?.ToString().ToLower();
+            string searchMethod = @params["searchMethod"] != null ? @params["searchMethod"].ToString().ToLower() : null;
 
             // Get common parameters (consolidated)
-            string name = @params["name"]?.ToString();
-            string tag = @params["tag"]?.ToString();
-            string layer = @params["layer"]?.ToString();
+            string name = @params["name"] != null ? @params["name"].ToString() : null;
+            string tag = @params["tag"] != null ? @params["tag"].ToString() : null;
+            string layer = @params["layer"] != null ? @params["layer"].ToString() : null;
             JToken parentToken = @params["parent"];
 
             // --- Prefab Redirection Check ---
             string targetPath =
-                targetToken?.Type == JTokenType.String ? targetToken.ToString() : null;
+                targetToken != null && targetToken.Type == JTokenType.String ? targetToken.ToString() : null;
             if (
                 !string.IsNullOrEmpty(targetPath)
                 && targetPath.EndsWith(".prefab", StringComparison.OrdinalIgnoreCase)
@@ -534,8 +534,8 @@ namespace UnityMcpBridge.Editor.Tools
                 finalInstance == null
                     ? originalPrefabPath
                     : AssetDatabase.GetAssetPath(
+                        
                         PrefabUtility.GetCorrespondingObjectFromSource(finalInstance)
-                            ?? (UnityEngine.Object)finalInstance
                     );
             string successMessage;
             if (!createdNewObject && !string.IsNullOrEmpty(messagePrefabPath)) // Instantiated existing prefab
@@ -611,9 +611,9 @@ namespace UnityMcpBridge.Editor.Tools
                         $"Cannot parent '{targetGo.name}' to '{newParentGo.name}', as it would create a hierarchy loop."
                     );
                 }
-                if (targetGo.transform.parent != (newParentGo?.transform))
+                if (targetGo.transform.parent != (newParentGo.transform))
                 {
-                    targetGo.transform.SetParent(newParentGo?.transform, true); // worldPositionStays = true
+                    targetGo.transform.SetParent(newParentGo.transform, true); // worldPositionStays = true
                     modified = true;
                 }
             }
