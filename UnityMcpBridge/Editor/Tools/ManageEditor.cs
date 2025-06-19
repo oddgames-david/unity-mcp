@@ -292,24 +292,24 @@ namespace UnityMcpBridge.Editor.Tools
             {
                 var selectionInfo = new
                 {
-                    activeObject = Selection.activeObject.name,
-                    activeGameObject = Selection.activeGameObject.name,
-                    activeTransform = Selection.activeTransform.name,
+                    activeObject = Selection.activeObject != null ? Selection.activeObject.name : null,
+                    activeGameObject = Selection.activeGameObject != null ? Selection.activeGameObject.name : null,
+                    activeTransform = Selection.activeTransform != null ? Selection.activeTransform.name : null,
                     activeInstanceID = Selection.activeInstanceID,
                     count = Selection.count,
                     objects = Selection
                         .objects.Select(obj => new
                         {
-                            name = obj.name,
-                            type = obj.GetType().FullName,
-                            instanceID = obj.GetInstanceID(),
+                            name = obj != null ? obj.name : null,
+                            type = obj != null ? obj.GetType().FullName : null,
+                            instanceID = obj != null ? obj.GetInstanceID() : 0,
                         })
                         .ToList(),
                     gameObjects = Selection
                         .gameObjects.Select(go => new
                         {
-                            name = go.name,
-                            instanceID = go.GetInstanceID(),
+                            name = go != null ? go.name : null,
+                            instanceID = go != null ? go.GetInstanceID() : 0,
                         })
                         .ToList(),
                     assetGUIDs = Selection.assetGUIDs, // GUIDs for selected assets in Project view
