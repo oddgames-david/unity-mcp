@@ -2171,7 +2171,7 @@ namespace UnityMcpBridge.Editor.Tools
                         z = go.transform.right.z,
                     },
                 },
-                parentInstanceID = (go.transform.parent == null 0 ? go.transform.parent.gameObject.GetInstanceID()), // 0 if no parent
+                parentInstanceID = (go.transform.parent == null : 0 ? go.transform.parent.gameObject.GetInstanceID()), // 0 if no parent
                 // Optionally include components, but can be large
                 // components = go.GetComponents<Component>().Select(c => GetComponentData(c)).ToList()
                 // Or just component names:
