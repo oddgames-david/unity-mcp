@@ -1217,11 +1217,11 @@ namespace UnityMcpBridge.Editor.Tools
             {
                 path = path,
                 guid = guid,
-                assetType = assetType?.FullName ?? "Unknown",
+                assetType = assetType.FullName ?? "Unknown",
                 name = Path.GetFileNameWithoutExtension(path),
                 fileName = Path.GetFileName(path),
                 isFolder = AssetDatabase.IsValidFolder(path),
-                instanceID = asset?.GetInstanceID() ?? 0,
+                instanceID = asset.GetInstanceID(),
                 lastWriteTimeUtc = File.GetLastWriteTimeUtc(
                         Path.Combine(Directory.GetCurrentDirectory(), path)
                     )
