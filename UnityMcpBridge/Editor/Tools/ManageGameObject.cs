@@ -1139,7 +1139,7 @@ namespace UnityMcpBridge.Editor.Tools
                     // Path is relative to scene root or rootSearchObject
                     Transform foundTransform = rootSearchObject
                         ? rootSearchObject.transform.Find(searchTerm)
-                        : GameObject.Find(searchTerm)?.transform;
+                        : GameObject.Find(searchTerm).transform;
                     if (foundTransform != null)
                         results.Add(foundTransform.gameObject);
                     break;
@@ -1416,7 +1416,11 @@ namespace UnityMcpBridge.Editor.Tools
             Component targetComponentInstance = null
         )
         {
-            Component targetComponent = targetComponentInstance ?? targetGo.GetComponent(compName);
+            Component targetComponent = targetComponentInstance;
+
+            if (targetComponent == null)
+                targetComponent = targetGo.GetComponent(compName);
+                
             if (targetComponent == null)
             {
                 return Response.Error(
