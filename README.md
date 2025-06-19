@@ -6,7 +6,7 @@ Unity MCP acts as a bridge, allowing AI assistants (like Claude, Cursor) to inte
 
 ---
 
-## <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/justinpbarnett/unity-mcp/assets/11047284/c279675a-dd58-406b-9613-5b16b5c6bb63"><source media="(prefers-color-scheme: light)" srcset="https://github.com/justinpbarnett/unity-mcp/assets/11047284/b54f891d-961b-4048-a9c4-3af46e2a52fc"><img alt="UnityMCP Workflow" width="100%" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;"></picture>
+## <picture><source media="(prefers-color-scheme: dark)" srcset="https://github.com/oddgames-david/unity-mcp/assets/11047284/c279675a-dd58-406b-9613-5b16b5c6bb63"><source media="(prefers-color-scheme: light)" srcset="https://github.com/oddgames-david/unity-mcp/assets/11047284/b54f891d-961b-4048-a9c4-3af46e2a52fc"><img alt="UnityMCP Workflow" width="100%" style="max-width: 600px; display: block; margin-left: auto; margin-right: auto;"></picture>
 
 ## Key Features 🚀
 
@@ -72,7 +72,7 @@ Unity MCP connects your tools using two components:
 3.  Click `+` -> `Add package from git URL...`.
 4.  Enter:
     ```
-    https://github.com/justinpbarnett/unity-mcp.git?path=/UnityMcpBridge
+    https://github.com/oddgames-david/unity-mcp.git?path=/UnityMcpBridge
     ```
 5.  Click `Add`.
 6. The MCP Server should automatically be installed onto your machine as a result of this process.
@@ -227,19 +227,19 @@ Help make Unity MCP better!
 
 </details>  
 
-Still stuck? [Open an Issue](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Fjustinpbarnett%2Funity-mcp%2Fissues).
+Still stuck? [Open an Issue](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Foddgames-david%2Funity-mcp%2Fissues).
 
 ---
 
 ## License 📜
 
-MIT License. See [LICENSE](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Fjustinpbarnett%2Funity-mcp%2Fblob%2Fmaster%2FLICENSE) file.
+MIT License. See [LICENSE](https://www.google.com/url?sa=E&q=https%3A%2F%2Fgithub.com%2Foddgames-david%2Funity-mcp%2Fblob%2Fmaster%2FLICENSE) file.
 
 ---
 
 ## Contact 👋
 
-- **X/Twitter:** [@justinpbarnett](https://www.google.com/url?sa=E&q=https%3A%2F%2Fx.com%2Fjustinpbarnett)
+- **X/Twitter:** [@oddgames-david](https://www.google.com/url?sa=E&q=https%3A%2F%2Fx.com%2Foddgames-david)
     
 
 ---
